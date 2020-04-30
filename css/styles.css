@@ -58,7 +58,7 @@ div.title {
     font-size: 5.2rem!important;
     line-height: 1;
     display: block!important;
-    color: lightblue;
+    color: #fa430a;
     max-width: 52%;
 }
 
@@ -71,7 +71,7 @@ div.title {
     right: 35px;
     /* font-style: oblique; */
     /* font-family: 'Playfair Display'; */
-    color: #b2b5b6;
+    color: #666;
     letter-spacing: 1pt;
     font-size: 0.8em;
 }
@@ -107,10 +107,6 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 1pt;
   font-weight: 500;
-}
-
-h2 i::before {
-  opacity: 50%;
 }
 
 /* When in PDF export mode make sure superscripts are nice and small and italic */
@@ -177,7 +173,7 @@ sup {
 
 
 a {
-  color: #588ebf;
+  color: #fa430a;
 }
 
 a:hover {
