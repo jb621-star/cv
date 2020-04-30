@@ -132,9 +132,9 @@ Disclaimer {#disclaimer}
 
 Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
 
-The source code is available at [github.com/dcossyleon/cv](https://github.com/dcossyleon/cv).
+Source code available: [github.com/dcossyleon/cv](https://github.com/dcossyleon/cv).
 
-Last updated on `r Sys.Date()`.
+Updated: `r Sys.Date()`.
 
 
 
@@ -172,6 +172,8 @@ print_text_block(text_blocks, 'data_aside')
 print_section(position_data, 'research_data')
 ```
 
+<br>
+<br>
 <br>
 <br>
 <br>

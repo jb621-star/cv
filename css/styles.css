@@ -19,7 +19,7 @@ img {
   display: block;
   padding: 0.5rem;
   margin-bottom: 1rem;
-  border: 2pt #fcfcfc solid;
+  border: 1pt #fa430a57 solid;
 }
 
 [data-id="main"] {
@@ -129,10 +129,10 @@ sup {
 /* Customize some of the sizing variables */
 :root {
   --sidebar-width: 11rem; /* Shrink sidebar width  */
-  --sidebar-background-color: #fcfcfc; /* Sidebar color*/
+  --sidebar-background-color: white; /* Sidebar color*/
   --sidebar-horizontal-padding: 0.01in; /* Reduce sidebar padding */
   --decorator-outer-dim: 10px; /* Make position delineating circles larger */
-  --decorator-border: 2px solid #588ebf50; /* Timeline line color*/
+  --decorator-border: 2px solid #dfeef4; /* Timeline line color*/
 }
 
 /* sidebar left border */
@@ -142,7 +142,7 @@ sup {
     display: block;
     position: absolute;
     z-index: 0;
-    right: 14.5rem;
+    left: 14.5rem;
     top: 0;
     bottom: 0;
     width: 1px;
@@ -156,9 +156,9 @@ sup {
     display: block;
     position: absolute;
     z-index: 0;
-    right: 0;
+    left: 0;
     width: 14rem;
-    background-color: #add8e65e;
+    background-color: #fcfcfc;
 }
 
 .pagedjs_first_page .pagedjs_sheet::after {
@@ -196,10 +196,26 @@ a:hover {
   opacity: 90%;
 }
 
+.aside {
+    width: var(--sidebar-width);
+    padding: 0.9in 5px 0.9px 10px;
+    font-size: 0.8rem;
+    float: left;
+    position: absolute;
+    left: 0;
+}
+
+[data-id="main"] {
+    width: var(--main-width);
+    padding: 0 0.25in 0 0.25in;
+    font-size: 0.7rem;
+    float: right;
+}
 
 #aside,
 .aside {
   z-index: 3;
+  color: #253b5e;
 }
 
 #aside a{
@@ -255,7 +271,7 @@ a:hover {
 /* Make little circle outline */
 /* teal #1cc1b3 */
 .decorator::after {
-  background-color: #588ebf;
+  background-color: #71a8bb;
   
 }
 
