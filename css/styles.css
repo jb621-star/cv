@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700&display=swap');
 
 /* Main text is monserrat*/
 body {
@@ -8,12 +9,108 @@ body {
   color: #444;
 }
 
+strong {
+  font-weight: 600;
+}
+
+img {
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 2pt #fcfcfc solid;
+}
+
+[data-id="main"] {
+    padding-left: 1rem;
+    padding-right: 2.4rem;
+}
+
 /* Give headers playfair font */
+
+.header-block{
+  background-color: white;
+  border-bottom: 1pt #dedede solid;
+  width: var(--pagedjs-width);
+  height: 250px;
+  margin-top: calc(-1*var(--pagedjs-margin-top));
+  margin-left: -19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-block-inner {
+  background-color: #fcfcfc;
+  width: 100%;
+  height: 236px;
+  display: flex;
+  align-items: center;
+  /*justify-content: center;*/
+  border-top: 1px solid #add8e65e;
+}
+
+div.title {
+    font-family: "Playfair Display", serif;
+    text-align: left;
+    padding: 3rem;
+    font-size: 5.2rem!important;
+    line-height: 1;
+    display: block!important;
+    color: lightblue;
+    max-width: 52%;
+}
+
+.subtitle {
+    display: flex;
+    margin: 0 auto;
+    position: absolute;
+    max-width: 46.3%;
+    top: 45px;
+    right: 35px;
+    /* font-style: oblique; */
+    /* font-family: 'Playfair Display'; */
+    color: #b2b5b6;
+    letter-spacing: 1pt;
+    font-size: 0.8em;
+}
+
+.item {
+  text-transform: uppercase;
+  display: block;
+}
+
 h1,
-h2,
-h3 {
+h2 {
   font-family: "Playfair Display", serif;
   color: #000;
+}
+
+h1{
+  text-transform: none;
+  color: silver;
+  font-weight: normal;
+  display: none;
+}
+
+h2 {
+  letter-spacing: 1pt;
+}
+.aside h2,
+#aside h2 {
+ color: #35859f; 
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1pt;
+  font-weight: 500;
+}
+
+h2 i::before {
+  opacity: 50%;
 }
 
 /* When in PDF export mode make sure superscripts are nice and small and italic */
@@ -35,11 +132,87 @@ sup {
 
 /* Customize some of the sizing variables */
 :root {
-  --sidebar-width: 12rem; /* Shrink sidebar width  */
-  --sidebar-background-color: #f7fbff; /* Make sidebar blue */
+  --sidebar-width: 11rem; /* Shrink sidebar width  */
+  --sidebar-background-color: #fcfcfc; /* Sidebar color*/
   --sidebar-horizontal-padding: 0.01in; /* Reduce sidebar padding */
-  --decorator-outer-dim: 10px; /* Make position deliniating circles larger */
-  --decorator-border: 2px solid #bdd7e7; /* Make timeline a blue as well*/
+  --decorator-outer-dim: 10px; /* Make position delineating circles larger */
+  --decorator-border: 2px solid #588ebf50; /* Timeline line color*/
+}
+
+/* sidebar left border */
+
+.pagedjs_sheet::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    right: 14.5rem;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #dedede;
+    height: 100%;
+}
+
+.pagedjs_sheet::after,
+.pagedjs_first_page .pagedjs_sheet::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    width: 14rem;
+    background-color: #add8e65e;
+}
+
+.pagedjs_first_page .pagedjs_sheet::after {
+  height: 74.9%;
+  top: 257.4px;
+}
+
+.pagedjs_sheet::after {
+  height: 98.7%;
+  top: 7px;
+}
+
+
+a {
+  color: #588ebf;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.section.level1.aside {
+  height: 74.9%;
+  padding-top: 1.6rem;
+}
+
+
+[data-id="skills"] {
+    line-height: 1.2;
+}
+
+[data-id="disclaimer"] {
+  position: static;
+  text-align: left;
+  opacity: 90%;
+}
+
+
+#aside,
+.aside {
+  z-index: 3;
+}
+
+#aside a{
+  color: #243b5f;
+}
+
+#aside p, 
+#aside ul li{
+  color: #243b5f;
 }
 
 .details .place {
@@ -67,7 +240,7 @@ sup {
 
 /* Move closer to start and up towards header */
 .aside ul {
-  padding-left: 1rem;
+  padding-left: 0rem;
 }
 
 .aside li::before {
@@ -76,16 +249,18 @@ sup {
   content: "• ";
 }
 
-/* Make sure elements in asside are centered and have a nice small text */
+/* Make sure elements in aside are centered and have a nice small text */
 .aside {
   width: calc(var(--sidebar-width) + 9px);
   line-height: 1.2;
   font-size: 0.75rem;
 }
 
-/* Make little circle outline be a light blue */
+/* Make little circle outline */
+/* teal #1cc1b3 */
 .decorator::after {
-  background-color: #08306b;
+  background-color: #588ebf;
+  
 }
 
 /* Remove the fake bullets from lists */
