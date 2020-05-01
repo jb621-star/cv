@@ -33,7 +33,7 @@ img {
   background-color: white;
   border-bottom: 1pt #dedede solid;
   width: var(--pagedjs-width);
-  height: 250px;
+  height: 242px;
   margin-top: calc(-1*var(--pagedjs-margin-top));
   margin-left: -19px;
   display: flex;
@@ -44,7 +44,7 @@ img {
 .header-block-inner {
   background-color: #fcfcfc;
   width: 100%;
-  height: 236px;
+  height: 229px;
   display: flex;
   align-items: center;
   /*justify-content: center;*/
@@ -58,7 +58,7 @@ div.title {
     font-size: 5.2rem!important;
     line-height: 1;
     display: block!important;
-    color: #fa430a;
+    color: #e43b07;
     max-width: 52%;
 }
 
@@ -162,8 +162,8 @@ sup {
 }
 
 .pagedjs_first_page .pagedjs_sheet::after {
-  height: 74.9%;
-  top: 257.4px;
+  height: 75.9%;
+  top: 248.1px;
 }
 
 .pagedjs_sheet::after {
@@ -173,7 +173,7 @@ sup {
 
 
 a {
-  color: #fa430a;
+  color: #e43b07;
 }
 
 a:hover {

@@ -40,8 +40,8 @@ sheet_is_publicly_readable <- TRUE
 PDF_EXPORT <- FALSE
 
 
-CV_PDF_LOC <- "https://github.com/dcossyleon/cv/raw/master/deleon_cv.pdf"
-CV_HTML_LOC <- "github.com/dcossyleon/cv/index.html"
+CV_PDF_LOC <- "github.com/dcossyleon/cv/raw/master/cv.pdf"
+CV_HTML_LOC <- "dcossyleon.github.io/cv/"
 
 
 # A global (gasp) variable that holds all the links that were inserted for
@@ -209,7 +209,7 @@ print_section(position_data, 'design')
 
 <!-- These breaks just force a new page so section doesnt get cut off -->
 <br>
-
+<br>
 
 Talks {data-icon=microphone-alt}
 --------------------------------------------------------------------------------
