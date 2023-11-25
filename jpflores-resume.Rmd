@@ -1,165 +1,163 @@
 ---
-title: "JP Flores' resume"
+title: "JP Flores' Resume"
 author: JP Flores
 date: "`r Sys.Date()`"
-googlefonts: ["Tilt Prism"]
 output:
   pagedown::html_resume:
-      css:
-        - custom.css  
-        - resume
+    css: ['css/custom_resume.css', 'css/styles.css', 'resume']
     # set it to true for a self-contained HTML page but it'll take longer to render
-    #self_contained: false
-# uncomment this line to produce HTML and PDF in RStudio:
-knit: pagedown::chrome_print
+    self_contained: true
 ---
 
-# Aside
 
-## Contact {#contact}
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+library(tidyverse)
+library(glue)
 
--   <i class="fa-solid fa-comments"></i> Pronouns: he/him
--   <i class="fa-solid fa-square-phone"></i> 661-993-2696
--   <i class="fa-solid fa-square-envelope"></i>
-    [jpflores013\@gmail.com](mailto:jpflores013@gmail.com){.email}
--   <i class="fa-solid fa-house"></i> Carrboro, NC
+# ======================================================================
+# These variables determine how the the data is loaded and how the exports are
+# done.
 
-## Links {#links}
+# Is data stored in google sheets? If no data will be gather from the csvs/
+# folder in project
+using_googlesheets <- TRUE
 
--   <i class="fa fa-github"></i>
-    [github.com/jpflores-13](https://github.com/jpflores-13)
--   <i class="fa-brands fa-linkedin"></i>
-    [linkedin.com/in/john-patrick-flores](https://www.linkedin.com/in/john-patrick-flores/)
--   <i class="fa-brands fa-twitter"></i>
-    [\@jpflores_13](https://twitter.com/jpflores_13)
--   <i class="fa-brands fa-orcid"></i>
-    [0000-0001-5619-8990](https://orcid.org/my-orcid?orcid=0000-0001-5619-8990)
+# Just the copied URL from the sheet
+positions_sheet_loc <- "https://docs.google.com/spreadsheets/d/1kzVjmxlzmNsFXYa_A9A6OpZcMWZC1zOY62Ra5Xd9OPE/edit?usp=sharing"
 
-## Skills & Training {#skills}
+# Is this sheet available for anyone to read? If you're using a private sheet
+# set this to false and go to gather_data.R and run the data loading manually
+# once to cache authentication
+sheet_is_publicly_readable <- TRUE
 
-- **Effective Mentoring Training** (2022)
+# Is the goal of this knit to build a document that is exported to PDF? If so
+# set this to true to have links turned into footnotes at the end of the
+# document
+PDF_EXPORT <- FALSE
 
-- **Programming languages** including R, Python, bash scripting, HTML, and CSS
 
-- **Workflow management** tools such as Make, Snakemake, and Nextflow using Docker and Git for reproducibility.
+# A global (gasp) variable that holds all the links that were inserted for
+# placement at the end
+links <- c()
 
-- **High-performance computing** environments
+# ======================================================================
+# Now we source two external scripts. One contains functions for building the
+# text output and the other loads up our data from either googlesheets or csvs
 
-- **Strong understanding of large, complex NGS data types** such as Hi-C/Micro-C, RNA, SLAM, CUT&RUN, ChiP, ATAC
+# Functions for building sections from CSV data
+source('parsing_functions.R') 
 
-- **Confident** working in highly collaborative, fast-paced environments.
+# Load data for CV/Resume
+source('gather_data.R')
 
-## Awards & Accolades {#awards}
+# Now we just need to filter down the position data to include less verbose
+# categories and only the entries we have designated for the resume
+position_data <- position_data %>% 
+  filter(in_resume) %>% 
+  mutate(
+    # Build some custom sections by collapsing others
+    section = case_when(
+      section %in% c('research_positions', 'industry_positions') ~ 'positions', 
+      section %in% c('data_science_writings', 'by_me_press') ~ 'writings',
+      TRUE ~ section
+    )
+  ) 
+```
 
-- [**Occidental's 18 Young Scientists to Watch** (2023)](https://www.oxy.edu/magazine/issues/spring-2023/18-young-scientists-watch)
-- [**UNC Department of Genetics Retreat Poster Award** (2022)](https://bcb.unc.edu/2022/09/16/john-flores-receives-top-poster-award-at-2022-scientific-retreat/)
-- [**National Science Foundation (NSF) Graduate Research Fellowship Program (GRFP)** (2022)](https://www.oxy.edu/academics/student-success/national-international-fellowships/fellowships-stories/john-patrick)
-- [**Spotify Next Wave Award Winner** (2021)](https://podcasters.spotify.com/resources/news)
-- [**Trevor Moawad Leadership Award** (2021)](https://www.oxy.edu/news/tiger-club-athletics-awards-announced-2021)
-- [**Dean’s Award: Service** (2021)](https://www.oxy.edu/news/deans-award-winners-2021)
-- [**Capstone Student Leader of the Year Award** (2021)](https://www.oxy.edu/news/2021-student-leadership-awards-honor-exemplary-undergraduates)
-- [**Lucille Y. Gilman Memorial Award** (2021)](https://www.oxy.edu/commencement/class-2021-highlights/senior-class-day-awards-2021)
-- **John W. McMenamin Award** (2021)
 
-# Main
 
-## JP Flores {#title}
+Aside
+================================================================================
 
-### PhD Candidate in Bioinformatics & Computational Biology
 
-#### Computational Biologist with expertise in high-throughput genomics, multiplexed imaging, data visualization, and science communication. I'm passionate about innovation in science and the diversity, equity, and inclusion (DEI) space. {#summary}
+![logo](logo.jpeg){width=100%}
 
-## Education {data-icon="graduation-cap" data-concise="true"}
+Contact {#contact}
+--------------------------------------------------------------------------------
 
-### PhD in Bioinformatics and Computational Biology
+```{r}
+contact_info %>% 
+  glue_data("- <i class='fa fa-{icon}'></i> {contact}")
+```
 
-The University of North Carolina at Chapel Hill
 
-N/A
 
-2021 - present
+Language Skills {#skills}
+--------------------------------------------------------------------------------
 
-Graduate Certificate in Innovation for the Public Good
+```{r}
+build_skill_bars(skills)
+```
 
-Advisor: Doug Phanstiel
 
-### BA in Cellular & Molecular Biology 
 
-Occidental College, Los Angeles, CA
+Open Source Contributions {#open-source}
+--------------------------------------------------------------------------------
 
-N/A
+All projects available at `github.com/nstrayer/<name>`
 
-2017 - 2021
 
-Public Health and Critical Theory & Social Justice Minors
+- `shinysense`: R package to use sensor data in Shiny apps
+- `tuftesque`: Hugo theme (behind LiveFreeOrDichotomize.com)
+- `sbmR`: R package for fitting stochasitic block models
 
-## Experience {data-icon="laptop"}
 
-### Graduate Research Assistant
+More info {#more-info}
+--------------------------------------------------------------------------------
 
-Phanstiel Lab (UNC-CH School of Medicine)
+See full CV at nickstrayer.me/cv for more complete list of positions and publications.
 
-Chapel Hill, NC
 
-2022 - Present
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
 
-- Using computational and wet-lab techniques to investigate the role of 3D chromatin architecture in response to environmental stress. 
-- Developing a user interface for the R/Bioconductor data visualization packager, plotgardener
+Made w/ [**pagedown**](https://github.com/rstudio/pagedown). 
 
-### Undergraduate Researcher
+Source code: [github.com/nstrayer/cv](https://github.com/nstrayer/cv).
 
-Schulz Lab (Occidental College Department of Biology)
+Last updated on `r Sys.Date()`.
 
-Los Angeles, CA
 
-2017 - 2021
 
-- Utilize techniques such as DNA isolation, PCR, gel electrophoresis, and HPLC to find medical relevance of venom. 
-- Conduct fieldwork in Kauai to study and capture venomous cone snails. 
+Main
+================================================================================
 
-## <i class="fa-solid fa-folder-open"></i> Featured Work {data-icon="NULL"}
-### [**From where does it STEM?**](https://open.spotify.com/show/1KLdFOVbk70n2qAz6zcdv2?si=97783437144f4e7a)
+Desirée De Leon {#title}
+--------------------------------------------------------------------------------
 
-Host/Creator
+```{r}
+print_text_block(text_blocks, 'intro')
+```
 
-N/A
 
-N/A
 
-A podcast that empowers the next generation of diverse scientists.
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
 
-### the people of posit: bringing personality to R packages {#posit}
-Invited talk at posit::conf(2023)
+```{r}
+position_data %>% print_section('education')
+```
 
-N/A
 
-N/A
 
-#### Chicago, Illinois {#chicago}
+Selected Positions {data-icon=suitcase}
+--------------------------------------------------------------------------------
 
-### Hyperosmotic stress induces phase-separation-driven chromatin loops
-Poster presentation at the Keystone Symposium: Chromatin Architecture in Human Disease & Development 
+```{r}
+position_data %>% print_section('positions')
+```
 
-N/A
 
-N/A
 
-#### Victoria, British Columbia
+Selected Writing {data-icon=newspaper}
+--------------------------------------------------------------------------------
 
-### Hyperosmotic stress induces complete rewiring of chromatin interactions
-Poster presentation at the Fifth Annual Dr. Samuel M. Nabrit Conference for Early Career Scholars 
+```{r}
+position_data %>% print_section('writings')
+```
 
-N/A
 
-N/A
-
-#### Providence, Rhode Island {#providence}
-
-### Hyperosmotic stress induces complete rewiring of chromatin interactions
-Poster presentation at the 10th Annual Mid-Atlantic PREP & IMSD Research Symposium 
-
-N/A
-
-N/A
-
-#### Blacksburg, Virginia {#blacksburg}
