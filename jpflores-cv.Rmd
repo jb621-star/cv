@@ -219,13 +219,19 @@ print_section(position_data, 'academic_articles')
 print_section(position_data, 'non_academic_articles')
 ```
 
-Presentations {data-icon=microphone-alt}
+Invited Talks {data-icon=microphone-alt}
 --------------------------------------------------------------------------------
 
 ```{r}
-# print_section(position_data, 'presentations')
+print_section(position_data, 'invited_talks')
 ```
 
+Poster Presentations {data-icon=microphone-alt}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'poster_presentations')
+```
 
 
 ```{r}
