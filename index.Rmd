@@ -1,6 +1,6 @@
 ---
-title: "Desiree De Leon's CV"
-author: Desiree De Leon
+title: "JP Flores' CV"
+author: JP Flores
 date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:
@@ -27,7 +27,7 @@ library(tidyverse)
 using_googlesheets <- TRUE
 
 # Just the copied URL from the sheet
-positions_sheet_loc <- "https://docs.google.com/spreadsheets/d/1eTpZBkKZH8gZJXyilYMwVmcna96mBdyhLxBB_DjQwAM/edit?usp=sharing"
+positions_sheet_loc <- "https://docs.google.com/spreadsheets/d/1kzVjmxlzmNsFXYa_A9A6OpZcMWZC1zOY62Ra5Xd9OPE/edit?usp=sharing"
 
 # Is this sheet available for anyone to read? If you're using a private sheet
 # set this to false and go to gather_data.R and run the data loading manually
@@ -40,8 +40,8 @@ sheet_is_publicly_readable <- TRUE
 PDF_EXPORT <- FALSE
 
 
-CV_PDF_LOC <- "github.com/dcossyleon/cv/raw/master/cv.pdf"
-CV_HTML_LOC <- "dcossyleon.github.io/cv/"
+CV_PDF_LOC <- "github.com/jpflores-13/cv/raw/master/cv.pdf"
+CV_HTML_LOC <- "jpflores-13.github.io/cv/"
 
 
 # A global (gasp) variable that holds all the links that were inserted for
@@ -75,7 +75,7 @@ if(PDF_EXPORT){
 
 <div class="header-block">
   <div class="header-block-inner">
-  <div class="title">Desirée De&nbsp;Leon</div>
+  <div class="title">JP Flores</div>
   
 
   </div>
@@ -132,7 +132,7 @@ Disclaimer {#disclaimer}
 
 Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
 
-Source code available: [github.com/dcossyleon/cv](https://github.com/dcossyleon/cv).
+Source code available: [github.com/jpflores-13/cv](https://github.com/jpflores-13/cv).
 
 Updated: `r Sys.Date()`.
 
@@ -141,7 +141,7 @@ Updated: `r Sys.Date()`.
 Main
 ================================================================================
 
-Desiree De Leon {#title}
+JP Flores {#title}
 --------------------------------------------------------------------------------
 
 Education {data-icon=graduation-cap data-concise=true}
@@ -149,14 +149,6 @@ Education {data-icon=graduation-cap data-concise=true}
 
 ```{r}
 print_section(position_data, 'education')
-```
-
-
-Awards & Scholarships {data-icon=trophy}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'honors_awards')
 ```
 
 Research & Data Science Experience {data-icon=laptop}
@@ -169,7 +161,7 @@ print_text_block(text_blocks, 'data_aside')
 :::
 
 ```{r}
-print_section(position_data, 'research_data')
+print_section(position_data, 'research_experience')
 ```
 
 <br>
@@ -179,6 +171,13 @@ print_section(position_data, 'research_data')
 <br>
 <br>
 <br>
+
+Awards & Accolades {data-icon=trophy}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'honors_awards')
+```
 
 Teaching and Project Management {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------

@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.aside {
+    left: 0;
+    background-color: #e6ae6c; /* fallback color */
+    background-color: rgba(230, 174, 108, 0.6);
+}
+
+:root{
+  --sidebar-width: 3in;
+  --sidebar-background-color: white;
+  --main-width: 5.5in;
+}
+
+#main {
+    float: right;
+    padding: 0.15in 0.15in 0.15in 0.15in;
+}
+
+@page{
+    margin: 0 0 0 0;
+}
+
+body {
+    color: black;
+}
+
+a {
+    color: black;
+}
+
+[data-id="title"] h1 {
+    font-family: "Barlow";
+    font-weight: bold;
+    font-size: 30pt;
+    position: relative;
+    text-align: center;
+    right: 30pt;
+}
+
+[data-id="title"] h3 {
+    font-family: "Raleway";
+    font-weight: 300;
+    font-size: 14pt;
+    text-transform: uppercase;
+    position: relative;
+    text-align:center;
+    right: 30pt;
+}
+
+.details h3 {
+    margin-top: 10pt;
+    font-family: "Barlow";
+    font-weight: 600;
+}
+
+.details .place{
+    font-family: "Raleway";
+    font-weight: 500;
+}
+
+h2 {
+    font-family: "Barlow";
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway";
+}
+
+h4 {
+    position: relative;
+    right: 30pt;
+    font-weight: normal;
+    font-family: "Barlow";
+    margin: 0;
+    padding-top: 5pt;
+}
+
+[data-id="main"] h2::after {
+    display: none;
+}
+
+[data-id="main"] h2 {
+    color: black;
+    font-weight: bold;
+    font-size: 14pt;
+    left: 35pt;
+    border-bottom: 0.5px solid black;
+    width: 90%;
+    
+    
+}
+
+[data-id="main"] h2>i {
+    left: calc(var(--main-blocks-title-icon-offset-left) - 5pt);
+    top: 3.5pt;
+    color: black;
+}
+
+.aside h2{
+    font-weight: bold;
+}
+
+li {
+    color: black;
+    font-family: "Raleway";
+}
+
+[data-id="main"] li {
+    margin: 0;
+}
+
+#links ul{
+    margin-top: 0.05in;
+    padding-left: 0;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+div.decorator{
+    display: none;
+}
+
+div.date {
+    position: absolute;
+    right: 5pt;
+    padding-right: revert;
+    max-width: none;
+    margin-top: 5pt;
+}
+
+.date span {
+    display: inline;
+    font-family: "Barlow";
+    white-space: nowrap;
+    
+}
+
+.date span:nth-child(2)::before {
+    left: 1pt;
+    content: "-";
+    display: inherit;
+    top: 0;
+    padding-right: 5pt;
+    padding-left: 3pt;
+}
+
+.blocks>div{
+    padding-top: 13pt;
+}
+
+.main-block{
+    position: relative;
+    top: -20pt;
+}
+
+
+.main-block.concise .details div:not(.concise) {
+    padding: 0;
+}
+
+.details .location{
+    position: absolute;
+    left: 15pt;
+    padding-top: 12pt;
+    font-family: "Raleway";
+}
+
+[data-id="main"] ul{
+    padding-top: 10pt;
+}
+
+.fa-location-dot:before, .fa-map-marker-alt:before {
+    content: "\f124";
+    font-size: xx-small;
+}
+
+h5 {
+    font-family: "Barlow";
+    font-weight: normal;
+    font-size: 8pt;
+    margin-right: 50pt;
+    margin-top: 0;
+    margin-bottom: 2pt;
+}
+
+
+div#awards.section.level2 li {
+    list-style-type: disc;
+    font-weight: 400;
+}
+
+#awards ul{
+    margin-top: 0.05in;
+    padding-left: 0;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+div#graduate-research-assistant.section.level3.blocks {
+    height: 115px;
+}
+
+img {
+   float: right;
+   position: relative;
+   top: -30pt;
+   right: 15pt;
+}
+
+#skills ul{
+    margin-top: 0.05in;
+    padding-left: 0;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+div#skills.section.level2 li {
+    list-style-type: disc;
+    line-height: normal;
+    font-weight: 400;
+}
+
+div#victoria-british-columbia.section.level4 h4 {
+    right: 0;
+    padding-top: 0;
+    font-size: 8pt;
+    top: -2pt;
+    font-family: 'Raleway';
+}
+
+div#chicago.section.level4 h4 {
+    right: 0;
+    padding-top: 0;
+    font-size: 8pt;
+    top: -0.5pt;
+    font-family: 'Raleway';
+}
+
+div#providence.section.level4 h4 {
+    right: 0;
+    padding-top: 0;
+    font-size: 8pt;
+    top: -2pt;
+    font-family: 'Raleway';
+}
+
+div#blacksburg.section.level4 h4 {
+    right: 0;
+    padding-top: 0;
+    font-size: 8pt;
+    top: -2pt;
+    font-family: 'Raleway';
+}
+
+
+div.details {
+    padding-top: 0 !important;
+}
+
