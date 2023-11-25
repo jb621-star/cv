@@ -82,6 +82,7 @@ if(PDF_EXPORT){
 </div>
 
 <div class = "subtitle">
+
 ```{r intro}
   print_text_block(text_blocks, 'intro')
 ```
@@ -151,7 +152,7 @@ Education {data-icon=graduation-cap data-concise=true}
 print_section(position_data, 'education')
 ```
 
-Research & Data Science Experience {data-icon=laptop}
+Research Experience {data-icon=laptop}
 --------------------------------------------------------------------------------
 
 ::: aside
@@ -176,10 +177,18 @@ Awards & Accolades {data-icon=trophy}
 --------------------------------------------------------------------------------
 
 ```{r}
-print_section(position_data, 'honors_awards')
+print_section(position_data, 'awards_accolades')
 ```
 
-Teaching and Project Management {data-icon=chalkboard-teacher}
+
+Features & Interviews {data-icon=microphone}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'features_interviews')
+```
+
+Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
 ::: aside
@@ -189,32 +198,13 @@ print_text_block(text_blocks, 'teaching_experience_aside')
 :::
 
 ```{r}
-print_section(position_data, 'teaching_positions')
+print_section(position_data, 'teaching_experience')
 ```
-
-
-Web Design & Illustration {data-icon=pen-nib}
---------------------------------------------------------------------------------
-
-::: aside
-```{r}
-print_text_block(text_blocks, 'design_aside')
-```
-:::
-
-```{r}
-print_section(position_data, 'design')
-```
-
-<!-- These breaks just force a new page so section doesnt get cut off -->
-<br>
-<br>
-
-Talks {data-icon=microphone-alt}
+Training & Certifications {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
 ```{r}
-print_section(position_data, 'talks')
+print_section(position_data, 'training')
 ```
 
 Publications {data-icon=book}
@@ -224,15 +214,16 @@ Publications {data-icon=book}
 print_section(position_data, 'academic_articles')
 ```
 
+```{r}
+print_section(position_data, 'non_academic_articles')
+```
 
-Poster Presentations {data-icon=book}
+Presentations {data-icon=microphone-alt}
 --------------------------------------------------------------------------------
 
 ```{r}
-print_section(position_data, 'posters')
+# print_section(position_data, 'presentations')
 ```
-
-
 
 
 
