@@ -77,9 +77,8 @@ Aside
 
 ![logo](logo.jpeg){width=100%}
 
-Contact {#contact}
+JP FLORES {#contact}
 --------------------------------------------------------------------------------
-
 ```{r}
 contact_info %>% 
   glue_data("- <i class='fa fa-{icon}'></i> {contact}")
