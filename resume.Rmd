@@ -99,7 +99,7 @@ resume_awards %>% print_resume_awards('awards')
 
 More info {#more-info}
 --------------------------------------------------------------------------------
-See full CV at [jpflores-13.github.io/cv/](https://jpflores-13.github.io/cv/jpflores-cv.html)
+See full CV at [jpflores-13.github.io/cv/](https://jpflores-13.github.io/cv/cv.html)
 
 
 Disclaimer {#disclaimer}
