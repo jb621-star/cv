@@ -92,6 +92,39 @@ print_section <- function(position_data, section_id){
     )
 }
 
+# Take the resume_awards sheet
+# and print the section to markdown. 
+print_resume_awards <- function(resume_awards, section_id){
+  resume_awards %>% 
+    filter(section == section_id) %>% 
+    mutate(id = 1:n()) %>% 
+    pivot_longer(
+      starts_with('description'),
+      names_to = 'description_num',
+      values_to = 'description'
+    ) %>% 
+    filter(!is.na(description) | description_num == 'description_1') %>%
+    group_by(id) %>% 
+    mutate(
+      descriptions = list(description),
+      no_descriptions = is.na(first(description))
+    ) %>% 
+    ungroup() %>% 
+    filter(description_num == 'description_1') %>% 
+    mutate(
+      description_bullets = ifelse(
+        no_descriptions,
+        ' ',
+        map_chr(descriptions, ~paste('-', ., collapse = '\n'))
+    )) %>% 
+    strip_links_from_cols(c('description_bullets')) %>% 
+    mutate_all(~ifelse(is.na(.), 'N/A', .)) %>% 
+    glue_data(
+      "- {description_bullets}",
+      "\n\n\n",
+    )
+}
+
 # Construct a bar chart of skills
 build_skill_bars <- function(skills, out_of = 5){
   bar_color <- "#969696"

@@ -23,6 +23,7 @@ if(using_googlesheets){
   skills        <- read_sheet(positions_sheet_loc, sheet = "language_skills", skip = 1)
   text_blocks   <- read_sheet(positions_sheet_loc, sheet = "text_blocks", skip = 1)
   contact_info  <- read_sheet(positions_sheet_loc, sheet = "contact_info", skip = 1)
+  resume_awards  <- read_sheet(positions_sheet_loc, sheet = "resume_awards")
   
 } else {
   

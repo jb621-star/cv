@@ -85,17 +85,22 @@ contact_info %>%
   glue_data("- <i class='fa fa-{icon}'></i> {contact}")
 ```
 
-Language Skills {#skills}
+Skills {#skills}
 --------------------------------------------------------------------------------
 
 ```{r}
 build_skill_bars(skills)
 ```
 
+Featured Awards & Accolades {#awards}
+--------------------------------------------------------------------------------
+```{r}
+resume_awards %>% print_resume_awards('awards')
+```
+
 More info {#more-info}
 --------------------------------------------------------------------------------
-
-See full CV at jpflores-13.github.io/cv for more complete list of positions and publications.
+See full CV at jpflores-13.github.io/cv/
 
 
 Disclaimer {#disclaimer}
@@ -139,7 +144,7 @@ position_data %>% print_section('positions')
 
 
 
-Featured Work {data-icon=newspaper}
+Featured Talks {data-icon=newspaper}
 --------------------------------------------------------------------------------
 
 ```{r}
