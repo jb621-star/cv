@@ -135,7 +135,7 @@ position_data %>% print_section('education')
 
 
 
-Research Experiences {data-icon=suitcase}
+Research & Professional Experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
 ```{r}
