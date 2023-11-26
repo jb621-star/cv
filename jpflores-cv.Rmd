@@ -42,7 +42,7 @@ PDF_EXPORT <- FALSE
 
 
 CV_PDF_LOC <- "github.com/jpflores-13/cv/jpflores-cv.pdf"
-CV_HTML_LOC <- "jpflores-13.github.io/cv/"
+CV_HTML_LOC <- "jpflores-13.github.io/cv/jpflores-cv.html"
 
 
 # A global (gasp) variable that holds all the links that were inserted for
