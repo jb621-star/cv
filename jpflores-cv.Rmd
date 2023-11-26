@@ -6,7 +6,7 @@ output:
   pagedown::html_resume:
     css: ['css/styles.css', 'resume']
     # set it to true for a self-contained HTML page but it'll take longer to render
-    self_contained: true
+    self_contained: false
 knit: pagedown::chrome_print
 ---
 
@@ -41,8 +41,8 @@ sheet_is_publicly_readable <- TRUE
 PDF_EXPORT <- FALSE
 
 
-CV_PDF_LOC <- "github.com/jpflores-13/cv/raw/master/jpflores-cv.pdf"
-CV_HTML_LOC <- "jpflores-13.github.io/cv/jpflores-cv.html"
+CV_PDF_LOC <- "https://jpflores-13.github.io/cv/jpflores-cv.pdf"
+CV_HTML_LOC <- "https://jpflores-13.github.io/cv/jpflores-cv.html"
 
 
 # A global (gasp) variable that holds all the links that were inserted for
