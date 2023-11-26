@@ -41,7 +41,7 @@ sheet_is_publicly_readable <- TRUE
 PDF_EXPORT <- FALSE
 
 
-CV_PDF_LOC <- "github.com/jpflores-13/cv/raw/master/cv.pdf"
+CV_PDF_LOC <- "github.com/jpflores-13/cv/jpflores-cv.pdf"
 CV_HTML_LOC <- "jpflores-13.github.io/cv/"
 
 
@@ -139,7 +139,6 @@ Source code available: [github.com/jpflores-13/cv](https://github.com/jpflores-1
 Updated: `r Sys.Date()`.
 
 
-
 Main
 ================================================================================
 
@@ -166,13 +165,12 @@ print_text_block(text_blocks, 'data_aside')
 print_section(position_data, 'research_experience')
 ```
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+Professional Experience {data-icon=user-tie}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'professional_experience')
+```
 
 Awards & Accolades {data-icon=trophy}
 --------------------------------------------------------------------------------
@@ -201,19 +199,22 @@ print_text_block(text_blocks, 'teaching_experience_aside')
 ```{r}
 print_section(position_data, 'teaching_experience')
 ```
-Training & Certifications {data-icon=chalkboard-teacher}
+Training & Certifications {data-icon=medal}
 --------------------------------------------------------------------------------
 
 ```{r}
 print_section(position_data, 'training')
 ```
 
-Publications {data-icon=book}
+Academic Articles {data-icon=book}
 --------------------------------------------------------------------------------
 
 ```{r}
 print_section(position_data, 'academic_articles')
 ```
+
+Non-Academic Articles {data-icon=bookmark}
+--------------------------------------------------------------------------------
 
 ```{r}
 print_section(position_data, 'non_academic_articles')
@@ -231,6 +232,13 @@ Poster Presentations {data-icon=microphone-alt}
 
 ```{r}
 print_section(position_data, 'poster_presentations')
+```
+
+Service {data-icon=heart}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'service')
 ```
 
 
