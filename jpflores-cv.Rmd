@@ -155,12 +155,6 @@ print_section(position_data, 'education')
 Research Experience {data-icon=laptop}
 --------------------------------------------------------------------------------
 
-::: aside
-```{r}
-print_text_block(text_blocks, 'data_aside')
-```
-:::
-
 ```{r}
 print_section(position_data, 'research_experience')
 ```
@@ -208,6 +202,13 @@ print_section(position_data, 'training')
 
 Academic Articles {data-icon=book}
 --------------------------------------------------------------------------------
+
+
+::: aside
+```{r}
+print_text_block(text_blocks, 'academic_aside')
+```
+:::
 
 ```{r}
 print_section(position_data, 'academic_articles')
