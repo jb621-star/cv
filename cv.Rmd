@@ -240,6 +240,18 @@ Service {data-icon=heart}
 ```{r}
 print_section(position_data, 'service')
 ```
+- Student Admissions Commitee, UNC Biological and Biomedical Sciences Program
+- Diversity, Equity, & Inclusion (DEI) Advisory Committee, UNC Genetics
+- Scientist Ambassador, North Carolina DNA Day Connect
+- Students in Training, Academia, Medicine, and Research Program (STAHR), UNC School of Medicine Office of DEI
+- Lead Peer Mentor, GeNe F1 UNC Department of Genetics
+- Steering Commitee Member, UNC Curriculum in Bioinformatics & Computational Biology
+- Peer mentor, North Carolina A&T Bridges to the Doctorate Program
+- Peer mentor, Summer Undergraduate Research Experience in Biological Mechanisms (SURE-REU)
+- First-Year Group (FYG) Peer Mentor, UNC Biological & Biomedical Sciences Program
+- Admissions Diversity Advocate, UNC Office of Graduate Education
+- Strategic Planning Steering Committee, UNC School of Medicine
+- Bench/ Peer Mentor, Educational Pathways in Genomics Research (EDGE) at UNC
 
 
 ```{r}
