@@ -220,7 +220,7 @@ Non-Academic Articles {data-icon=bookmark}
 print_section(position_data, 'non_academic_articles')
 ```
 
-Invited Talks {data-icon=microphone-alt}
+Invited Talks / Workshops {data-icon=microphone-alt}
 --------------------------------------------------------------------------------
 
 ```{r}
