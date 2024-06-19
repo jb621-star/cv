@@ -92,7 +92,7 @@ if(PDF_EXPORT){
 Aside
 ================================================================================
 
-![logo](logo.jpeg){width=90%}
+![logo](logo.jpg){width=90%}
 
 ```{r}
 # When in export mode the little dots are unaligned, so fix that. 
