@@ -60,8 +60,6 @@ source('parsing_functions.R')
 source('gather_data.R')
 ```
 
-
-
 ```{r}
 # When in export mode the little dots are unaligned, so fix that. 
 if(PDF_EXPORT){
@@ -74,25 +72,23 @@ if(PDF_EXPORT){
 }
 ```
 
-<div class="header-block">
-  <div class="header-block-inner">
-  <div class="title">JP Flores</div>
-  
+::::: header-block
+:::: header-block-inner
+::: title
+JP Flores
+:::
+::::
+:::::
 
-  </div>
-</div>
-
-<div class = "subtitle">
-
+::: subtitle
 ```{r intro}
   print_text_block(text_blocks, 'intro')
 ```
-</div>
+:::
 
-Aside
-================================================================================
+# Aside
 
-![logo](logo.jpg){width=90%}
+![logo](logo.jpg){width="90%"}
 
 ```{r}
 # When in export mode the little dots are unaligned, so fix that. 
@@ -103,85 +99,80 @@ if(PDF_EXPORT){
 }
 ```
 
-Contact {#contact}
---------------------------------------------------------------------------------
+## Contact {#contact}
+
 ```{r}
 contact_info %>% 
   glue_data("- <i class='fa fa-{icon}'></i> {contact}")
 ```
 
-
-
-Skills {#skills}
---------------------------------------------------------------------------------
+## Skills {#skills}
 
 <i class="fab fa-r-project"></i>
 
-<!--i class="fab fa-html5"></i--> HTML
+<!--i class="fab fa-html5"></i-->
 
-<!--i class="fab fa-css3-alt"></i--> CSS
+HTML
 
-<!--i class="fas fa-code-branch"></i--> Git
+<!--i class="fab fa-css3-alt"></i-->
 
-<!--i class="fab fa-adobe"></i--> Photoshop
+CSS
 
-<!--i class="fab fa-adobe"></i--> Illustrator
+<!--i class="fas fa-code-branch"></i-->
 
+Git
 
-Disclaimer {#disclaimer}
---------------------------------------------------------------------------------
+<!--i class="fab fa-adobe"></i-->
 
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
+Photoshop
+
+<!--i class="fab fa-adobe"></i-->
+
+Illustrator
+
+## Disclaimer {#disclaimer}
+
+Made with the R package [**pagedown**](https://github.com/rstudio/pagedown).
 
 Source code available: [github.com/jpflores-13/cv](https://github.com/jpflores-13/cv).
 
 Updated: `r Sys.Date()`.
 
+# Main
 
-Main
-================================================================================
+## JP Flores {#title}
 
-JP Flores {#title}
---------------------------------------------------------------------------------
-
-Education {data-icon=graduation-cap data-concise=true}
---------------------------------------------------------------------------------
+## Education {data-icon="graduation-cap" data-concise="true"}
 
 ```{r}
 print_section(position_data, 'education')
 ```
 
-Research Experience {data-icon=laptop}
---------------------------------------------------------------------------------
+## Research Experience {data-icon="laptop"}
 
 ```{r}
 print_section(position_data, 'research_experience')
 ```
 
-Professional Experience {data-icon=user-tie}
---------------------------------------------------------------------------------
+## Professional Experience {data-icon="user-tie"}
 
 ```{r}
 print_section(position_data, 'professional_experience')
 ```
 
-Awards & Accolades {data-icon=trophy}
---------------------------------------------------------------------------------
+## Awards & Accolades {data-icon="trophy"}
 
 ```{r}
 print_section(position_data, 'awards_accolades')
 ```
 
-
-Features & Interviews {data-icon=microphone}
---------------------------------------------------------------------------------
+## Features & Interviews {data-icon="microphone"}
 
 ```{r}
 print_section(position_data, 'features_interviews')
 ```
 
-Teaching Experience {data-icon=chalkboard-teacher}
---------------------------------------------------------------------------------
+## Teaching Experience {data-icon="chalkboard-teacher"}
 
 ::: aside
 ```{r}
@@ -192,16 +183,14 @@ print_text_block(text_blocks, 'teaching_experience_aside')
 ```{r}
 print_section(position_data, 'teaching_experience')
 ```
-Training & Certifications {data-icon=medal}
---------------------------------------------------------------------------------
+
+## Training & Certifications {data-icon="medal"}
 
 ```{r}
 print_section(position_data, 'training')
 ```
 
-Academic Articles {data-icon=book}
---------------------------------------------------------------------------------
-
+## Academic Articles {data-icon="book"}
 
 ::: aside
 ```{r}
@@ -213,36 +202,29 @@ print_text_block(text_blocks, 'academic_aside')
 print_section(position_data, 'academic_articles')
 ```
 
-Non-Academic Articles {data-icon=bookmark}
---------------------------------------------------------------------------------
+## Non-Academic Articles {data-icon="bookmark"}
 
 ```{r}
 print_section(position_data, 'non_academic_articles')
 ```
 
-Invited Talks / Workshops {data-icon=microphone-alt}
---------------------------------------------------------------------------------
+## Invited Talks / Workshops {data-icon="microphone-alt"}
 
 ```{r}
 print_section(position_data, 'invited_talks')
 ```
 
-Poster Presentations {data-icon=microphone-alt}
---------------------------------------------------------------------------------
+## Poster Presentations {data-icon="microphone-alt"}
 
 ```{r}
 print_section(position_data, 'poster_presentations')
 ```
 
-Service {data-icon=heart}
---------------------------------------------------------------------------------
+## Service {data-icon="heart"}
 
 ```{r}
 print_section(position_data, 'service')
 ```
-
-
-
 
 ```{r}
 if(PDF_EXPORT){
@@ -261,5 +243,3 @@ Links {data-icon=link}
   })
 }
 ```
-
-
